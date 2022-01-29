@@ -9,7 +9,6 @@ library(stringr)
 library(magrittr)
 library(data.table)
 library(lubridate)
-setwd("C:/Users/Tguan/Desktop/Random R projects/Stock Market")
 
 # Find the ticker symbol of company and insert here:
 output<- f_score("AAPL")
