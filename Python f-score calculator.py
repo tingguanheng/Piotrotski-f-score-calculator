@@ -21,13 +21,13 @@ os.chdir('D:/Random projects/Stock Market')
 
 np.set_printoptions(suppress=True)
 
-Ticker = 'ASX'
+Ticker = 'EXTR'
 company = Ticker.upper()
 
 op = webdriver.ChromeOptions()
 op.add_argument('headless')
 
-driver_path = <insert driver path>
+driver_path = 'C:/Users/Tguan/.wdm/drivers/chromedriver/win32/103.0.5060.53/chromedriver.exe'
 driver = webdriver.Chrome(service = Service(driver_path), options = op)
 driver.get('https://finance.yahoo.com/quote/'+company+'/financials?p='+company)
 
@@ -65,7 +65,6 @@ Income_statement_table = Income_statement_table[1:]
 driver.get('https://finance.yahoo.com/quote/'+company+'/balance-sheet?p='+company)
 
 WebDriverWait(driver,20).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="Col1-1-Financials-Proxy"]/section/div[2]/button'))).click()
-
 html = driver.page_source
 soup = bs(html, features = 'html.parser')
 
